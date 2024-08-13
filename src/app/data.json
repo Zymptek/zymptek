@@ -9,17 +9,6 @@
       "Negotiation Support",
       "Custom Clearance",
       "Logistics Assistance"
-    ], 
-    "trendingProducts": [
-      { "id": 1, "name": "Handcrafted Rugs", "description": "Exquisite handmade rugs from skilled Indian artisans.", "price": 299.99, "image": "https://images.unsplash.com/photo-1600166898405-da9535204843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
-      { "id": 2, "name": "Ayurvedic Supplements", "description": "Natural health supplements based on ancient Indian wisdom.", "price": 49.99, "image": "https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" },
-      { "id": 3, "name": "Organic Spices", "description": "Premium quality organic spices sourced from Indian farms.", "price": 19.99, "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" },
-      { "id": 4, "name": "Textile Fabrics", "description": "High-quality textile fabrics made in India's finest mills.", "price": 14.99, "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1027&q=80" }
-    ],
-    "blogPosts": [
-      { "id": 1, "title": "The Rise of Indian Exports", "excerpt": "Explore how Indian exports are gaining prominence in global markets.", "image": "https://i0.wp.com/b2bexportimportacademy.com/blog/wp-content/uploads/2021/10/Copy-of-Copy-of-Top-10-Best-Indian-Export-Products-1.jpg?w=1024&ssl=1", "url": "/blog/rise-of-indian-exports" },
-      { "id": 2, "title": "Navigating Customs Regulations", "excerpt": "A comprehensive guide to understanding and managing customs regulations.", "image": "https://i0.wp.com/b2bexportimportacademy.com/blog/wp-content/uploads/2021/10/Copy-of-Copy-of-Top-10-Best-Indian-Export-Products-1.jpg?w=1024&ssl=1", "url": "/blog/customs-regulations-guide" },
-      { "id": 3, "title": "Sustainable Sourcing Practices", "excerpt": "Learn about sustainable sourcing practices and their impact on global trade.", "image": "https://i0.wp.com/b2bexportimportacademy.com/blog/wp-content/uploads/2021/10/Copy-of-Copy-of-Top-10-Best-Indian-Export-Products-1.jpg?w=1024&ssl=1", "url": "/blog/sustainable-sourcing" }
     ],
     "socialLinks": [
       { "name": "LinkedIn", "url": "https://linkedin.com/company/zymptek" },
