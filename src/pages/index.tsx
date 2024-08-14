@@ -11,24 +11,36 @@ import ServicePage from '@/components/Services';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
+import jsonLdData from "../app/lib/jsonLddata";
+import seoData from "@/app/lib/seo.json"
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{companyData.seoTitle}</title>
-        <meta name="description" content={companyData.seoDescription} />
-        <meta name="keywords" content={companyData.seoKeywords.join(', ')} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={companyData.seoTitle} />
-        <meta property="og:description" content={companyData.seoDescription} />
-        <meta property="og:url" content="https://zymptek.com/"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta property="og:site_name" content="Zymptek" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={companyData.seoTitle} />
-        <meta name="twitter:description" content={companyData.seoDescription} />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{seoData.seoTitle}</title>
+        <meta name="description" content={seoData.seoDescription} />
+        <meta name="keywords" content={seoData.seoKeywords.join(', ')} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={seoData.seoTitle} />
+        <meta property="og:description" content={seoData.seoDescription} />
+        <meta property="og:url" content={seoData.url} />
+        <meta property="og:image" content={seoData.image} />
+        <meta property="og:type" content={seoData.type} />
+        <meta property="og:site_name" content={seoData.siteName} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoData.seoTitle} />
+        <meta name="twitter:description" content={seoData.seoDescription} />
+        <meta name="twitter:image" content={seoData.image} />
+        
+        <link rel="canonical" href={seoData.url} />
+        <meta name="robots" content={seoData.robots} />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLdData)}
+        </script>
       </Head>
       <Navbar />
       <Background>
