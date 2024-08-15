@@ -1,12 +1,13 @@
 {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zymptek",
-    "url": "https://www.zymptek.com",
-    "logo": "https://www.zymptek.com/logo.png",
-    "contactPoint" : [{
-      "@type" : "ContactPoint",
-      "areaServed" : ["US","CA"]
-    }]
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://www.zymptek.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "ontario, Canada",
+    "postalCode": "M3J1V6",
+    "streetAddress": "470 Sentinel Road"
+  },
+  "email": "zymptek@gmail.com",
+  "name": "Zymptek"
 }
-  

@@ -1,5 +1,6 @@
 // pages/index.tsx
 import { NextPage } from 'next';
+import Script from 'next/script';
 import Head from 'next/head';
 import companyData from '@/app/data.json';
 import Navbar from '@/components/Navbar';
@@ -12,6 +13,7 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import seoData from "@/app/lib/seo.json"
+import StructuredData from "@/app/lib/json-ld-data.json"
 
 const Home: NextPage = () => {
   return (
@@ -37,7 +39,10 @@ const Home: NextPage = () => {
         
         <link rel="canonical" href={seoData.url} />
         <meta name="robots" content={seoData.robots} />
-        
+        <Script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(StructuredData) }}
+  />
       </Head>
       <Navbar />
       <Background>
