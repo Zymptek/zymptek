@@ -11,7 +11,6 @@ import ServicePage from '@/components/Services';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
-import jsonLdData from "@/app/lib/json-ld-data.json"
 import seoData from "@/app/lib/seo.json"
 
 const Home: NextPage = () => {
@@ -38,9 +37,7 @@ const Home: NextPage = () => {
         
         <link rel="canonical" href={seoData.url} />
         <meta name="robots" content={seoData.robots} />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdData)}
-        </script>
+        
       </Head>
       <Navbar />
       <Background>
@@ -53,6 +50,9 @@ const Home: NextPage = () => {
         <ContactForm />
         <Footer />
       </Background>
+
+
+      
     </>
   );
 };
