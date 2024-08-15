@@ -47,7 +47,8 @@ const Home: NextPage = () => {
           "@type": "PostalAddress",
           "addressLocality": "ontario, Canada",
           "postalCode": "M3J1V6",
-          "streetAddress": "470 Sentinel Road"
+          "streetAddress": "470 Sentinel Road",
+          "addressCountry": "Canada"
         },
         "email": "zymptek@gmail.com",
         "name": "Zymptek"
