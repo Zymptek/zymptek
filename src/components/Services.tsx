@@ -50,19 +50,14 @@ const ServicePage: React.FC = () => {
 
   const services: ServiceCardProps[] = [
     {
-      title: 'Buyer-Supplier Matchmaking',
-      description: 'Connect Indian exporters with reliable global buyers, and help international buyers find trustworthy Indian suppliers.',
-      icon: FaHandshake,
+      title: 'Product Sourcing',
+      description: 'Assist global buyers in finding and sourcing high-quality products from verified Indian manufacturers.',
+      icon: FaSearch,
     },
     {
       title: 'Supplier Verification',
       description: 'Thorough vetting process to ensure all suppliers meet quality and reliability standards for worry-free transactions.',
       icon: FaShieldAlt,
-    },
-    {
-      title: 'Market Intelligence',
-      description: 'Provide up-to-date market trends, demand forecasts, and competitor analysis to inform strategic decisions.',
-      icon: FaChartLine,
     },
     {
       title: 'Logistics Support',
@@ -73,22 +68,18 @@ const ServicePage: React.FC = () => {
       title: 'Trade Documentation',
       description: 'Expert guidance and support in preparing and managing all necessary export/import documentation.',
       icon: FaFileContract,
-    },
-    {
-      title: 'Financial Services',
-      description: 'Facilitate secure payment solutions and provide guidance on trade finance options to mitigate risks.',
-      icon: FaMoneyBillWave,
-    },
-    {
-      title: 'Global Compliance Assistance',
-      description: 'Stay updated with international trade regulations and ensure compliance across different markets.',
-      icon: FaGlobeAsia,
-    },
-    {
-      title: 'Product Sourcing',
-      description: 'Assist global buyers in finding and sourcing high-quality products from verified Indian manufacturers.',
-      icon: FaSearch,
-    },
+    }
+    // {
+    //   title: 'Financial Services',
+    //   description: 'Facilitate secure payment solutions and provide guidance on trade finance options to mitigate risks.',
+    //   icon: FaMoneyBillWave,
+    // },
+    // {
+    //   title: 'Global Compliance Assistance',
+    //   description: 'Stay updated with international trade regulations and ensure compliance across different markets.',
+    //   icon: FaGlobeAsia,
+    // },
+    
   ];
 
   return (
@@ -96,10 +87,10 @@ const ServicePage: React.FC = () => {
       <Container maxW="container.xl">
         <VStack spacing={12}>
           <Box textAlign="center">
-            <Heading as="h1" size="2xl" mb={4} color={textColor}>
+            <Heading as="h2" size="xl" mb={4} color={textColor}>
               Empowering Global Trade with Zymptek
             </Heading>
-            <Text fontSize="xl" maxW="3xl" mx="auto" color={textColor}>
+            <Text fontSize="xl" maxW="4xl" mx="auto" color={textColor}>
               Zymptek bridges the gap between Indian exporters and global buyers, fostering reliable partnerships and facilitating seamless international trade. Our comprehensive services support both parties throughout the entire trade lifecycle.
             </Text>
           </Box>

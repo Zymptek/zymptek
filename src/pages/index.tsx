@@ -11,7 +11,7 @@ import ServicePage from '@/components/Services';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
-import jsonLdData from "../app/lib/jsonLddata";
+import jsonLdData from "@/app/lib/json-ld-data.json"
 import seoData from "@/app/lib/seo.json"
 
 const Home: NextPage = () => {
