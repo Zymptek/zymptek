@@ -1,78 +1,235 @@
-// pages/index.tsx
-import { NextPage } from 'next';
+import React from 'react';
 import Head from 'next/head';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About'
-import Mission from '@/components/Mission';
-import Background from '@/components/Background';
-import ServicePage from '@/components/Services';
-import ContactForm from '@/components/ContactForm';
-import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
-import seoData from "@/app/lib/seo.json"
+import { Box, Container, Heading, Text, Button, VStack, HStack, Grid, GridItem, Icon, useColorModeValue, Flex } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { FaGlobe, FaChartLine, FaHandshake, FaIndustry, FaShip, FaGlobeAmericas } from 'react-icons/fa';
+import { RiShipLine } from 'react-icons/ri';
+import Image from 'next/image';
+import content from '@/app/content/home.json';
+import { IconType } from 'react-icons';
 
-const Home: NextPage = () => {
+const MotionBox = motion(Box);
+const MotionHeading = motion(Heading);
+const MotionText = motion(Text);
+
+const iconMap: Record<string, IconType> = {
+  FaGlobe, FaChartLine, FaHandshake, FaIndustry, FaShip, FaGlobeAmericas, RiShipLine
+};
+
+interface IFeatureCard {
+  icon: string,
+  title: string,
+  description: string
+}
+
+const FeatureCard = ({ icon, title, description } : IFeatureCard) => {
+  const textColor = 'brand.500';
+  const accentColor = 'brand.300';
+
+  return (
+    <MotionBox
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      bg='white'
+      p={{ base: 4, md: 6 }}
+      borderRadius="lg"
+      boxShadow="xl"
+      color={textColor}
+      _hover={{ transform: 'translateY(-5px)', boxShadow: '2xl' }}
+    >
+      <VStack spacing={4} align="start">
+        <Icon as={iconMap[icon]} w={8} h={8} color={accentColor} />
+        <Heading as="h3" size="md">
+          {title}
+        </Heading>
+        <Text fontSize={{ base: 'sm', md: 'md' }}>{description}</Text>
+      </VStack>
+    </MotionBox>
+  );
+};
+
+const HomePage = () => {
+  const textColor = useColorModeValue('brand.500', 'brand.100');
+  const accentColor = 'brand.300';
+
   return (
     <>
       <Head>
-        <title>{seoData.seoTitle}</title>
-        <meta name="description" content={seoData.seoDescription} />
-        <meta name="keywords" content={seoData.seoKeywords.join(', ')} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={seoData.seoTitle} />
-        <meta property="og:description" content={seoData.seoDescription} />
-        <meta property="og:url" content={seoData.url} />
-        <meta property="og:image" content={seoData.image} />
-        <meta property="og:type" content={seoData.type} />
-        <meta property="og:site_name" content={seoData.siteName} />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoData.seoTitle} />
-        <meta name="twitter:description" content={seoData.seoDescription} />
-        <meta name="twitter:image" content={seoData.image} />
-        
-        <link rel="canonical" href={seoData.url} />
-        <meta name="robots" content={seoData.robots} />
-        <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{ __html: JSON.stringify(
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "url": "https://www.zymptek.com/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "ontario, Canada",
-          "postalCode": "M3J1V6",
-          "streetAddress": "470 Sentinel Road",
-          "addressCountry": "Canada"
-        },
-        "email": "zymptek@gmail.com",
-        "name": "Zymptek"
-      }
-    ) }}
-  />
+        <title>{content.meta.title}</title>
+        <meta name="description" content={content.meta.description} />
+        <meta name="keywords" content={content.meta.keywords} />
+        <link rel="canonical" href={content.meta.url} />
       </Head>
-      <Navbar />
-      <Background>
-        
-        <Hero />
-        <About />
-        <Mission />
-        <ServicePage />
-        <Testimonials/>
-        <ContactForm />
-        <Footer />
-      </Background>
+      <Box as="main">
+        <Box position="relative" minHeight="100vh" display="flex" alignItems="center" py={{ base: 12, md: 20 }}>
+          <Container maxW="container.xl">
+            <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={{ base: 8, lg: 12 }} alignItems="center">
+              <GridItem>
+                <VStack spacing={{ base: 6, md: 8 }} align="start">
+                  <MotionHeading
+                    as="h1"
+                    size={{ base: "xl", md: "3xl" }}
+                    color="brand.600"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {content.hero.title}
+                  </MotionHeading>
+                  <MotionText
+                    fontSize={{ base: "md", md: "xl" }}
+                    color={textColor}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    {content.hero.description}
+                  </MotionText>
+                  <MotionBox
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <HStack spacing={4} flexWrap={{ base: 'wrap', md: 'nowrap' }}>
+                      <Link href={content.hero.cta1.link} passHref>
+                        <Button
+                          as={motion.button}
+                          size={{ base: "md", md: "lg" }}
+                          colorScheme="brand"
+                          leftIcon={<Icon as={FaGlobeAmericas} />}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          mb={{ base: 2, md: 0 }}
+                          w={{ base: 'full', md: 'auto' }}
+                        >
+                          {content.hero.cta1.text}
+                        </Button>
+                      </Link>
+                      <Link href={content.hero.cta2.link} passHref>
+                        <Button
+                          as={motion.button}
+                          size={{ base: "md", md: "lg" }}
+                          variant="outline"
+                          colorScheme="brand"
+                          leftIcon={<Icon as={FaHandshake} />}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          w={{ base: 'full', md: 'auto' }}
+                        >
+                          {content.hero.cta2.text}
+                        </Button>
+                      </Link>
+                    </HStack>
+                  </MotionBox>
+                  <Flex align="center" mt={0}>
+                    <Icon as={FaShip} color={accentColor} boxSize={{ base: 5, md: 6 }} mr={2} />
+                    <Text color={textColor} fontWeight="bold" fontSize={{ base: 'xs', md: 'md' }}>
+                      {content.hero.tagline}
+                    </Text>
+                  </Flex>
+                </VStack>
+              </GridItem>
+              <GridItem display={{ base: "none", lg: "block" }}>
+                <MotionBox
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/images/globe_business.png"
+                    alt="Global import illustration"
+                    width={750}
+                    height={392}
+                    layout="responsive"
+                    priority
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
+                  />
+                </MotionBox>
+              </GridItem>
+            </Grid>
+          </Container>
+        </Box>
 
+        <Box py={{ base: 12, md: 20 }}>
+          <Container maxW="container.xl">
+            <VStack spacing={{ base: 12, md: 16 }}>
+              <Heading as="h2" size={{ base: "xl", md: "2xl" }} textAlign="center" color={textColor}>
+                {content.features.title}
+              </Heading>
+              <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base: 6, md: 8 }}>
+                {content.features.items.map((feature, index) => (
+                  <FeatureCard
+                    key={index}
+                    icon={feature.icon}
+                    title={feature.title}
+                    description={feature.description}
+                  />
+                ))}
+              </Grid>
+            </VStack>
+          </Container>
+        </Box>
 
-      
+        <Box bg="brand.50" py={{ base: 12, md: 20 }}>
+          <Container maxW="container.xl">
+            <VStack spacing={{ base: 8, md: 12 }}>
+              <Heading as="h2" size={{ base: "xl", md: "2xl" }} textAlign="center" color="brand.600">
+                {content.industries.title}
+              </Heading>
+              <Text fontSize={{ base: "md", md: "xl" }} textAlign="center" maxW="container.md">
+                {content.industries.description}
+              </Text>
+              <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base: 6, md: 8 }}>
+                {content.industries.items.map((item, index) => (
+                  <MotionBox
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    bg='white'
+                    p={{ base: 4, md: 6 }}
+                    borderRadius="lg"
+                    boxShadow="xl"
+                  >
+                    <VStack>
+                      <Heading as="h3" size={{ base: "md", md: "lg" }} color="brand.500">
+                        {item.title}
+                      </Heading>
+                      <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" color="brand.500">
+                        {item.value}
+                      </Text>
+                      <Text textAlign="center" fontSize={{ base: "sm", md: "md" }} color="brand.500">{item.description}</Text>
+                    </VStack>
+                  </MotionBox>
+                ))}
+              </Grid>
+            </VStack>
+          </Container>
+        </Box>
+
+        <Box py={{ base: 12, md: 20 }}>
+          <Container maxW="container.xl">
+            <VStack spacing={{ base: 6, md: 8 }} align="center">
+              <Heading as="h2" size={{ base: "xl", md: "2xl" }} textAlign="center" color="brand.600">
+                {content.cta.title}
+              </Heading>
+              <Text fontSize={{ base: "md", md: "xl" }} textAlign="center" maxW="container.md">
+                {content.cta.description}
+              </Text>
+              <Link href={content.cta.buttonLink} passHref>
+                <Button as={motion.button} size={{ base: "md", md: "lg" }} colorScheme="brand" whileHover={{ scale: 1.05 }}>
+                  {content.cta.buttonText}
+                </Button>
+              </Link>
+            </VStack>
+          </Container>
+        </Box>
+      </Box>
     </>
   );
 };
 
-export default Home;
-
+export default HomePage;

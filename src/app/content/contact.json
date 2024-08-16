@@ -1,0 +1,81 @@
+{
+    "pageTitle": "Contact Zymptek - Your Global Trade Solutions Partner",
+    "pageDescription": "Get in touch with Zymptek for expert global trade solutions. We're here to help streamline your international trade operations with customized strategies and support.",
+    "pageKeywords": "contact, global trade, import, export, customs clearance, logistics, supply chain, trade facilitation",
+    "heroTitle": "Let's Connect",
+    "heroSubtitle": "We're here to answer your questions and provide the support you need for your global trade operations.",
+    "contactInfo": {
+      "email": "info@zymptek.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Global Trade Street, Business District, City, Country",
+      "hours": "Monday through Friday, 9 AM to 6 PM (EST)",
+      "responseTime": "We strive to respond to all inquiries within 24 hours."
+    },
+    "formTitle": "Send Us a Message",
+    "formFields": [
+      {
+        "name": "type",
+        "label": "I am a",
+        "type": "select",
+        "required": true,
+        "options": [
+          { "value": "buyer", "label": "Buyer" },
+          { "value": "seller", "label": "Seller" },
+          { "value": "logistics_provider", "label": "Logistics Provider" },
+          { "value": "other", "label": "Other" }
+        ]
+      },
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true
+      },
+      {
+        "name": "phone",
+        "label": "Phone",
+        "type": "tel",
+        "required": false
+      },
+      {
+        "name": "company",
+        "label": "Company",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "How can we help you with your global trade needs?"
+      }
+    ],
+    "submitButtonText": "Send Message",
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "question": "What types of global trade services does Zymptek offer?",
+        "answer": "Zymptek offers a comprehensive range of global trade services, including market entry strategies, logistics optimization, customs clearance, trade compliance, and supply chain management."
+      },
+      {
+        "question": "How quickly can I expect a response to my inquiry?",
+        "answer": "We aim to respond to all inquiries within 24 hours during our business hours. For urgent matters, please contact us directly by phone."
+      },
+      {
+        "question": "Do you provide services for both importers and exporters?",
+        "answer": "Yes, we cater to both importers and exporters, offering tailored solutions to meet the specific needs of each client, regardless of their role in the global trade ecosystem."
+      },
+      {
+        "question": "Can Zymptek help with trade compliance and regulations?",
+        "answer": "Absolutely. Our team of experts stays up-to-date with international trade regulations and can provide guidance on compliance issues, helping you navigate the complex world of global trade laws and regulations."
+      }
+    ]
+  }
+  

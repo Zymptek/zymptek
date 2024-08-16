@@ -27,7 +27,7 @@ const colors = {
   },
   hoverBg: {
     light: '#e6e6e6',
-    dark: '#2a2a2a',
+    dark: '#444444',
   },
 };
 
@@ -45,10 +45,7 @@ const components = {
     variants: {
       solid: {
         bg: 'brand.300',
-        color: 'white',
-        _hover: {
-          bg: 'brand.400',
-        },
+        color: 'white'
       },
       outline: {
         borderColor: 'brand.300',

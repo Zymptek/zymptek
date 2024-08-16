@@ -1,0 +1,67 @@
+{
+    "pageTitle": "About Zymptek | Our Journey in Global Trade Facilitation",
+    "pageDescription": "Discover Zymptek's mission, values, and impact in elevating Indian businesses to global markets. Learn about our journey and commitment to excellence in international trade.",
+    "pageKeywords": "about Zymptek, company overview, global business, Indian manufacturing, supply chain efficiency, import facilitation, international trade",
+    "pageUrl": "https://www.zymptek.com/about",
+    "hero": {
+      "title": "Zymptek – Global Partner for Imports from India",
+      "description": "Discover our journey, mission, and commitment to helping global importers find exceptional Indian products. Join us as we work to bridge the gap between global demand and India's top businesses, ensuring you find the best partners to meet your needs.",
+      "features": [
+        { "icon": "FaGlobeAsia", "text": "Global Reach" },
+        { "icon": "FaHandshake", "text": "Trusted Partner" },
+        { "icon": "FaChartLine", "text": "Data-Driven" }
+      ]
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Founded in 2015, Zymptek emerged from a vision to bridge the gap between Indian excellence and global markets. Our founders, seasoned experts in international trade, recognized the untapped potential of Indian businesses and the increasing global demand for quality products and services.",
+        "Starting with a focus on traditional exports, we quickly expanded our services to encompass the entire spectrum of international trade facilitation. Today, Zymptek stands as a beacon of innovation and reliability in the global trade landscape, serving thousands of businesses across diverse industries."
+      ],
+      "ctaText": "Get in Touch"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "events": [
+        { "year": "2015", "event": "Zymptek founded with a vision to connect Indian businesses to global markets" },
+        { "year": "2017", "event": "Expanded services to cover end-to-end export facilitation" },
+        { "year": "2019", "event": "Launched proprietary market intelligence platform" },
+        { "year": "2021", "event": "Reached milestone of facilitating $500M+ in exports" },
+        { "year": "2023", "event": "Expanded operations to 50+ countries worldwide" }
+      ]
+    },
+    "values": {
+      "title": "Our Core Values",
+      "cards": [
+        {
+          "icon": "FaUsers",
+          "title": "Collaboration",
+          "description": "We believe in the power of teamwork and partnerships to achieve extraordinary results."
+        },
+        {
+          "icon": "FaGlobeAsia",
+          "title": "Global Perspective",
+          "description": "We embrace diversity and think globally while acting locally to serve our clients better."
+        },
+        {
+          "icon": "FaHandshake",
+          "title": "Integrity",
+          "description": "We uphold the highest standards of ethics and transparency in all our business dealings."
+        }
+      ]
+    },
+    "impact": {
+      "title": "Our Impact",
+      "description": "Since our inception, Zymptek has made significant strides in empowering Global businesses",
+      "stats": [
+        { "number": "500+", "description": "Businesses Empowered" },
+        { "number": "50+", "description": "Countries Reached" },
+        { "number": "$1B+", "description": "in Facilitated Exports" }
+      ]
+    },
+    "cta": {
+      "title": "Join Us in Shaping the Future of Global Trade",
+      "description": "Whether you're an Indian business looking to expand globally or an international buyer seeking quality products, Zymptek is your trusted partner in navigating the complexities of international trade.",
+      "buttonText": "Start Your Global Journey"
+    }
+  }

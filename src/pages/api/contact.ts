@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { type, name, email, description } = req.body;
+    const { type, name, email, phone, company, message } = req.body;
 
     // Create a transporter for sending emails
     const transporter = nodemailer.createTransport({
@@ -25,7 +25,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Type: ${type}
         Name: ${name}
         Email: ${email}
-        Description: ${description}
+        Phone: ${phone}
+        Company: ${company}
+        Messgae: ${message}
       `,
     };
 

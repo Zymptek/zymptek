@@ -1,0 +1,98 @@
+{
+    "meta": {
+      "title": "Zymptek | Quality Indian Imports for USA & Canada",
+      "description": "Zymptek connects global businesses with top Indian manufacturers, offering high-quality, cost-effective import solutions. Streamline your supply chain and boost your competitive edge.",
+      "keywords": "Indian imports, USA imports, Canada imports, global sourcing, supply chain optimization, cost-effective sourcing, high-quality Indian products, import facilitation",
+      "url": "https://www.zymptek.com/"
+    },
+    "hero": {
+      "title": "Gateway to Quality Imports from India",
+      "description": "Discover high-quality, cost-effective products from India. Zymptek connects global businesses with top Indian manufacturers, streamlining your import process and boosting your competitive edge.",
+      "cta1": {
+        "text": "Explore Import Solutions",
+        "link": "/services"
+      },
+      "cta2": {
+        "text": "Start Importing",
+        "link": "/contact"
+      },
+      "tagline": "Facilitating Global Imports, One Shipment at a Time"
+    },
+    "features": {
+      "title": "Why Choose Zymptek for Your Indian Import Journey?",
+      "items": [
+        {
+          "icon": "FaGlobe",
+          "title": "Vast Supplier Network",
+          "description": "Access our extensive network of vetted Indian suppliers across various industries."
+        },
+        {
+          "icon": "FaChartLine",
+          "title": "Market Intelligence",
+          "description": "Make informed decisions with our in-depth analysis of Indian market trends and opportunities."
+        },
+        {
+          "icon": "RiShipLine",
+          "title": "Seamless Logistics",
+          "description": "Optimize your supply chain with our end-to-end import logistics solutions."
+        },
+        {
+          "icon": "FaHandshake",
+          "title": "Cultural Bridge",
+          "description": "Navigate cultural differences with our expert guidance for smooth business relationships."
+        },
+        {
+          "icon": "FaIndustry",
+          "title": "Industry Expertise",
+          "description": "Benefit from our specialized knowledge in key Indian export sectors."
+        },
+        {
+          "icon": "FaChartLine",
+          "title": "Cost Optimization",
+          "description": "Reduce costs and increase margins by sourcing high-quality products from India."
+        }
+      ]
+    },
+    "industries": {
+      "title": "Empowering Global Imports Across Industries",
+      "description": "Zymptek specializes in facilitating imports from India for a wide range of North American industries, connecting you with the best of India's products and services.",
+      "items": [
+        {
+          "title": "IT Services",
+          "value": "$150B+",
+          "description": "Annual IT services imports facilitated"
+        },
+        {
+          "title": "Pharmaceuticals",
+          "value": "$24B+",
+          "description": "Pharmaceutical imports supported in 2023"
+        },
+        {
+          "title": "Textiles",
+          "value": "$30B+",
+          "description": "Textile and apparel imports managed"
+        },
+        {
+          "title": "Handicrafts",
+          "value": "$3.5B+",
+          "description": "Artisanal product imports promoted"
+        },
+        {
+          "title": "Agriculture",
+          "value": "$40B+",
+          "description": "Agricultural imports facilitated"
+        },
+        {
+          "title": "Automotive",
+          "value": "$15B+",
+          "description": "Automotive component imports managed"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Optimize Your Supply Chain?",
+      "description": "Join hundreds of North American businesses that have successfully navigated the complexities of importing from India with Zymptek. Let us empower your journey to cost-effective, high-quality sourcing.",
+      "buttonText": "Start Importing from India",
+      "buttonLink": "/contact"
+    }
+  }

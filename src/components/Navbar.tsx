@@ -164,7 +164,7 @@ const Navbar: React.FC = () => {
       right="0"
       zIndex="999"
       animate={{
-        backgroundColor: scrolled ? bgColor : 'transparent',
+        backgroundColor: bgColor,
         boxShadow: scrolled ? 'md' : 'none',
       }}
       transition={{ duration: 0.3 }}
@@ -238,16 +238,16 @@ const Navbar: React.FC = () => {
 
 const DesktopNav: React.FC = () => {
   const NAV_ITEMS = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about',
-      children: [
-        { label: 'Learn More', subLabel: 'Learn About Us', href: '#about' },
-        { label: 'Mission', subLabel: 'Check out our mission', href: '#mission' }
-      ],
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about'
+      // children: [
+      //   { label: 'Learn More', subLabel: 'Learn About Us', href: '#about' },
+      //   { label: 'Mission', subLabel: 'Check out our mission', href: '#mission' }
+      // ],
      },
-    { label: 'Services', href: '#services' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Services', href: '/services' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -261,11 +261,11 @@ const DesktopNav: React.FC = () => {
 
 const MobileNav: React.FC = () => {
   const NAV_ITEMS = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Home', href: '/home' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Contact', href: '/contact' }
   ];
 
   return (
