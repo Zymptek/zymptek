@@ -30,6 +30,7 @@ export default function Document() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "url": "https://www.zymptek.com/",
+        "logo": "https://www.zymptek.com/logo.png",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "ontario, Canada",
