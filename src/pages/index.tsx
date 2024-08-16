@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Head from 'next/head';
 import { Box, Container, Heading, Text, Button, VStack, HStack, Grid, GridItem, Icon, useColorModeValue, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
@@ -8,6 +8,7 @@ import { RiShipLine } from 'react-icons/ri';
 import Image from 'next/image';
 import content from '@/app/content/home.json';
 import { IconType } from 'react-icons';
+import dynamic from 'next/dynamic';
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
@@ -17,38 +18,9 @@ const iconMap: Record<string, IconType> = {
   FaGlobe, FaChartLine, FaHandshake, FaIndustry, FaShip, FaGlobeAmericas, RiShipLine
 };
 
-interface IFeatureCard {
-  icon: string,
-  title: string,
-  description: string
-}
-
-const FeatureCard = ({ icon, title, description } : IFeatureCard) => {
-  const textColor = 'brand.500';
-  const accentColor = 'brand.300';
-
-  return (
-    <MotionBox
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      bg='white'
-      p={{ base: 4, md: 6 }}
-      borderRadius="lg"
-      boxShadow="xl"
-      color={textColor}
-      _hover={{ transform: 'translateY(-5px)', boxShadow: '2xl' }}
-    >
-      <VStack spacing={4} align="start">
-        <Icon as={iconMap[icon]} w={8} h={8} color={accentColor} />
-        <Heading as="h3" size="md">
-          {title}
-        </Heading>
-        <Text fontSize={{ base: 'sm', md: 'md' }}>{description}</Text>
-      </VStack>
-    </MotionBox>
-  );
-};
+const FeatureCard = dynamic(() => import('../components/FeatureCard'), {
+  loading: () => <p>Loading...</p>,
+});
 
 const HomePage = () => {
   const textColor = useColorModeValue('brand.500', 'brand.100');
@@ -83,7 +55,6 @@ const HomePage = () => {
                     color={textColor}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     {content.hero.description}
                   </MotionText>
@@ -143,7 +114,7 @@ const HomePage = () => {
                     width={750}
                     height={392}
                     layout="responsive"
-                    priority
+                    loading='lazy'
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
                   />
@@ -153,25 +124,28 @@ const HomePage = () => {
           </Container>
         </Box>
 
-        <Box py={{ base: 12, md: 20 }}>
-          <Container maxW="container.xl">
-            <VStack spacing={{ base: 12, md: 16 }}>
-              <Heading as="h2" size={{ base: "xl", md: "2xl" }} textAlign="center" color={textColor}>
-                {content.features.title}
-              </Heading>
-              <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base: 6, md: 8 }}>
-                {content.features.items.map((feature, index) => (
-                  <FeatureCard
-                    key={index}
-                    icon={feature.icon}
-                    title={feature.title}
-                    description={feature.description}
-                  />
-                ))}
-              </Grid>
-            </VStack>
-          </Container>
-        </Box>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Box py={{ base: 12, md: 20 }}>
+            <Container maxW="container.xl">
+              <VStack spacing={{ base: 12, md: 16 }}>
+                <Heading as="h2" size={{ base: "xl", md: "2xl" }} textAlign="center" color={textColor}>
+                  {content.features.title}
+                </Heading>
+                <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base: 6, md: 8 }}>
+                  {content.features.items.map((feature, index) => (
+                    <FeatureCard
+                      key={index}
+                      icon={feature.icon}
+                      title={feature.title}
+                      description={feature.description}
+                    />
+                  ))}
+                </Grid>
+              </VStack>
+            </Container>
+          </Box>
+        </Suspense>
+
 
         <Box bg="brand.50" py={{ base: 12, md: 20 }}>
           <Container maxW="container.xl">

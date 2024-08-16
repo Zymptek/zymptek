@@ -7,7 +7,6 @@ export default function Document() {
   return (
     <Html>
       <Head >
-        <title>{seoData.seoTitle}</title>
       <meta name="description" content={seoData.seoDescription} />
           <meta name="keywords" content={seoData.seoKeywords.join(', ')} />
          <meta property="og:title" content={seoData.seoTitle} />
