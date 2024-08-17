@@ -1,5 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-import { Box, useColorModeValue, useTheme } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 const MotionBox = motion(Box);
@@ -35,28 +35,7 @@ const Bubble : React.FC<BubbleProps> = ({ size, color, initialPosition, scrollRa
 };
 
 const Background : React.FC<BackgroundProps>= ({ children }) => {
-  const theme = useTheme();
   const bgColor = useColorModeValue("background.light", "background.dark");
-  const [pageHeight, setPageHeight] = useState(0);
-
-  useEffect(() => {
-    const updatePageHeight = () => {
-      setPageHeight(document.body.scrollHeight);
-    };
-
-    updatePageHeight();
-    window.addEventListener('resize', updatePageHeight);
-    return () => window.removeEventListener('resize', updatePageHeight);
-  }, []);
-
-  const bubbles = [
-    { size: 100, initialPosition: -50, scrollRange: pageHeight * 0.7 },
-    { size: 150, initialPosition: pageHeight * 0.3, scrollRange: pageHeight * 0.6 },
-    { size: 80, initialPosition: pageHeight * 0.5, scrollRange: pageHeight * 0.8 },
-    { size: 120, initialPosition: pageHeight * 0.7, scrollRange: pageHeight * 0.4 },
-    { size: 200, initialPosition: pageHeight * 0.9, scrollRange: pageHeight * 0.5 },
-  ];
-
   const accentColor = useColorModeValue('brand.300', 'brand.200');
 
   return (

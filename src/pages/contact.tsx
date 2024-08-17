@@ -15,7 +15,6 @@ import {
   useToast,
   Icon,
   Flex,
-  chakra,
   SimpleGrid,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';

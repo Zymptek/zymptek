@@ -3,20 +3,14 @@ import Head from 'next/head';
 import { Box, Container, Heading, Text, Button, VStack, HStack, Grid, GridItem, Icon, useColorModeValue, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FaGlobe, FaChartLine, FaHandshake, FaIndustry, FaShip, FaGlobeAmericas } from 'react-icons/fa';
-import { RiShipLine } from 'react-icons/ri';
+import { FaHandshake, FaShip, FaGlobeAmericas } from 'react-icons/fa';
 import Image from 'next/image';
 import content from '@/app/content/home.json';
-import { IconType } from 'react-icons';
 import dynamic from 'next/dynamic';
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
-
-const iconMap: Record<string, IconType> = {
-  FaGlobe, FaChartLine, FaHandshake, FaIndustry, FaShip, FaGlobeAmericas, RiShipLine
-};
 
 const FeatureCard = dynamic(() => import('../components/FeatureCard'), {
   loading: () => <p>Loading...</p>,

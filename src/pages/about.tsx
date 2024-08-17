@@ -8,8 +8,6 @@ import content from '@/app/content/about.json';
 import { IconType } from 'react-icons';
 
 const MotionBox = motion(Box);
-const MotionHeading = motion(Heading);
-const MotionText = motion(Text);
 
 interface IValueCard {
     icon: string,

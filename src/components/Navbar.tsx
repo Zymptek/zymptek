@@ -28,7 +28,6 @@ import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 
 const MotionBox = motion(Box);
-const MotionFlex = motion(Flex);
 
 interface NavItemProps {
   label: string;
