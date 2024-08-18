@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://www.zymptek.com
 
 # Sitemaps
 Sitemap: https://www.zymptek.com/sitemap.xml
