@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Heading, Text, VStack, Grid, GridItem, Image, HStack, Button, Icon, useColorModeValue, Flex } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, Grid, GridItem, Image, HStack, Button, Icon, useColorModeValue, Flex, Divider } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaUsers, FaGlobeAsia, FaHandshake, FaRocket, FaChartLine } from 'react-icons/fa';
@@ -18,8 +18,9 @@ interface IValueCard {
 const iconMap: Record<string, IconType> = { FaUsers, FaGlobeAsia, FaHandshake, FaRocket, FaChartLine }
 
 const TimelineItem = ({ year, event } : any) => {
-  const textColor = "brand.100";
-  const accentColor = 'brand.300';
+  const insideText = useColorModeValue('brand.100','brand.500')
+  const textColor = useColorModeValue('brand.500', 'brand.100');
+  const accentColor = useColorModeValue('brand.300','brand.200');
   
   return(
   <MotionBox
@@ -29,7 +30,7 @@ const TimelineItem = ({ year, event } : any) => {
     transition={{ duration: 0.5 }}
   >
     <HStack spacing={4} alignItems="flex-start">
-      <Box bg={accentColor} color="white" px={3} py={1} borderRadius="full">
+      <Box bg={accentColor} color={insideText} px={3} py={1} borderRadius="full">
         {year}
       </Box>
       <Text>{event}</Text>
@@ -67,7 +68,7 @@ const ValueCard = ({ icon, title, description } : IValueCard) => {
 
 const AboutPage = () => {
   const textColor = useColorModeValue('brand.500', 'brand.100');
-  const accentColor = 'brand.300';
+  const accentColor = useColorModeValue('brand.300','brand.200');
 
   return (
     <>
@@ -78,9 +79,46 @@ const AboutPage = () => {
         <meta name="description" content={content.pageDescription} />
         <meta name="keywords" content={content.pageKeywords} />
         <link rel="canonical" href={content.pageUrl} />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "url": "https://www.zymptek.com/about",
+      "name": "About Us | Zymptek",
+      "description": "Learn more about Zymptek, our mission, vision, and the team behind our innovative solutions.",
+      "inLanguage": "en",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.zymptek.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://www.zymptek.com/about"
+          }
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Zymptek",
+        "url": "https://www.zymptek.com/",
+        "logo": "https://www.zymptek.com/logo.png"
+      }
+    }
+  ) }}
+/>
+
       </Head>
       <Box>
-        <Box bg="brand.50" py={{ base: 10, md: 20 }} mt={{ base: 10, sm: 20, md: 10 }}>
+        <Box py={{ base: 10, md: 20 }} mt={{ base: 10, sm: 20, md: 10 }}>
           <Container maxW="container.xl" px={{ base: 4, md: 8 }}>
             <MotionBox
               initial={{ opacity: 0, y: 50 }}
@@ -136,9 +174,9 @@ const AboutPage = () => {
             </GridItem>
           </Grid>
         </Container>
-
-        <Box bg="gray.800" py={16}>
-          <Container maxW="container.xl" px={{ base: 4, md: 8 }} color="brand.100">
+        
+        <Box py={16}>
+          <Container maxW="container.xl" px={{ base: 4, md: 8 }} color={textColor}>
             <VStack spacing={12}>
               <Heading as="h2" size={{ base: "lg", md: "xl" }} textAlign="center">
                 {content.journey.title}

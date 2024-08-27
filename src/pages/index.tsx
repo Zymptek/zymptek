@@ -18,7 +18,7 @@ const FeatureCard = dynamic(() => import('../components/FeatureCard'), {
 
 const HomePage = () => {
   const textColor = useColorModeValue('brand.500', 'brand.100');
-  const accentColor = 'brand.300';
+  const accentColor = useColorModeValue('brand.300','brand.200');
 
   return (
     <>
@@ -27,6 +27,54 @@ const HomePage = () => {
         <meta name="description" content={content.meta.description} />
         <meta name="keywords" content={content.meta.keywords} />
         <link rel="canonical" href={content.meta.url} />
+        <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "https://www.zymptek.com/",
+        "name": "Home | Zymptek",
+        "description": content.meta.description,
+        "inLanguage": "en",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "About",
+              "item": "https://www.zymptek.com/about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Service",
+              "item": "https://www.zymptek.com/services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Testimonials",
+              "item": "https://www.zymptek.com/testimonials"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Contact",
+              "item": "https://www.zymptek.com/contact"
+            }
+          ]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Zymptek",
+          "url": "https://www.zymptek.com/",
+          "logo": "https://www.zymptek.com/logo.png"
+        }
+      }
+    ) }}
+  />
       </Head>
       <Box as="main">
         <Box position="relative" minHeight="100vh" display="flex" alignItems="center" py={{ base: 12, md: 20 }}>

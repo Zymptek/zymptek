@@ -1,7 +1,7 @@
 // components/FeatureCard.tsx
 
 import React from 'react';
-import { Box, VStack, Icon, Heading, Text } from '@chakra-ui/react';
+import { Box, VStack, Icon, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 import * as Icons from 'react-icons/fa';
@@ -16,7 +16,7 @@ interface IFeatureCard {
 
 const FeatureCard: React.FC<IFeatureCard> = ({ icon, title, description }) => {
   const textColor = 'brand.500';
-  const accentColor = 'brand.300';
+  const accentColor = useColorModeValue('brand.300','brand.400');
 
   // Dynamically import the icon
   const IconComponent = Icons[icon as keyof typeof Icons] as IconType;

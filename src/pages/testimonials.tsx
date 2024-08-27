@@ -71,14 +71,14 @@ const TestimonialCard: React.FC<{ testimonial: typeof testimonialsData.testimoni
 };
 
 const SuccessStory: React.FC = () => {
-  const bgColor = useColorModeValue('gray.50', 'gray.800');
+  const bgColor = useColorModeValue("brand.300", "brand.400")
   const { successStory } = testimonialsData;
 
   return (
-    <Box bg={bgColor} py={20}>
+    <Box bg={bgColor} py={20} color="brand.100">
       <Container maxW="container.xl">
         <MotionContainer>
-          <Heading as="h2" size="xl" textAlign="center" mb={12} color="brand.600">
+          <Heading as="h2" size="xl" textAlign="center" mb={12}>
             Client Success Story
           </Heading>
           <Flex direction={{ base: 'column', md: 'row' }} align="center" justify="space-between">
@@ -126,6 +126,79 @@ const TestimonialPage: React.FC = () => {
         <meta name="description" content={testimonialsData.pageDescription} />
         <meta name="keywords" content={testimonialsData.pageKeywords} />
         <link rel="canonical" href={testimonialsData.pageUrl} />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Client Testimonials and Success Stories | Zymptek",
+      "description": "Discover how Zymptek has helped businesses around the world streamline their global trade operations, enter new markets, and achieve remarkable growth. Read our client testimonials and success stories.",
+      "url": "https://www.zymptek.com/testimonials",
+      "mainEntity": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "John Smith"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "Global Logistics Co."
+          },
+          "reviewBody": "Zymptek's market intelligence services have been instrumental in our expansion into new markets. Their insights are always spot-on and actionable.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Emily Johnson"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "TechInnovate Inc."
+          },
+          "reviewBody": "The custom clearance process used to be a nightmare for us. Zymptek's trade facilitation services have streamlined our operations and saved us both time and money.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Chang"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "EcoProducts Ltd."
+          },
+          "reviewBody": "Zymptek's logistics management solutions have revolutionized our supply chain. We've seen a 30% increase in efficiency since partnering with them.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Organization",
+        "name": "Zymptek",
+        "sameAs": "https://www.zymptek.com"
+      },
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Start Your Journey",
+        "url": "https://www.zymptek.com/contact"
+      }
+    }
+    
+  ) }}
+/>
       </Head>
       <Box>
         <Box color="white" py={20}>

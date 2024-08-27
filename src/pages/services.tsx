@@ -64,21 +64,22 @@ const MotionContainer: React.FC<{ children: React.ReactNode; delay?: number }> =
 
 const ServiceSection: React.FC<{ category: ServiceCategory; index: number }> = ({ category, index }) => {
   const IconComponent = { FaChartLine, FaHandshake, FaTruckMoving }[category.icon];
-  const bgColor = useColorModeValue('gray.50', 'gray.800');
+  const bgColor = useColorModeValue('background.light', 'background.dark');
+  const secondaryBgColor = useColorModeValue("brand.200","brand.400")
   const textColor = useColorModeValue('brand.500', 'brand.100');
-  const headingColor = useColorModeValue('brand.500', 'brand.300');
-    const accentColor = 'brand.300';
+  const headingColor = useColorModeValue('brand.400', 'brand.200');
+  const accentColor = useColorModeValue('brand.300','brand.200');
   const isEven = index % 2 === 0;
 
   return (
-    <Box py={20} bg={isEven ? bgColor : 'transparent'}>
+    <Box py={20} bg={isEven ? bgColor : secondaryBgColor }>
       <Container maxW="container.xl">
         <MotionContainer delay={0.1}>
           <Flex direction={{ base: 'column', md: 'row' }} align="center" justify="space-between">
             <Box flex={1} mb={{ base: 8, md: 0 }} mr={{ base: 0, md: 8 }}>
               <HStack mb={4}>
                 <Icon as={IconComponent} boxSize={8} color={accentColor} />
-                <Heading as="h2" size="xl" color={textColor}>
+                <Heading as="h2" size="xl" color={headingColor}>
                   {category.name}
                 </Heading>
               </HStack>
@@ -126,6 +127,7 @@ const ServiceSection: React.FC<{ category: ServiceCategory; index: number }> = (
 };
 
 const WhyChooseUs: React.FC = () => {
+  const bgColor = useColorModeValue("brand.300", "brand.400")
   const reasons = [
     "Industry-leading expertise",
     "Comprehensive global trade solutions",
@@ -136,7 +138,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <Box bg="brand.500" py={20} color="white">
+    <Box bg={bgColor} py={20} color="brand.100">
       <Container maxW="container.xl">
         <MotionContainer>
           <Heading as="h2" size="xl" textAlign="center" mb={12}>
@@ -176,6 +178,109 @@ const ServicesPage: React.FC = () => {
         <meta name="description" content={typedContent.pageDescription} />
         <meta name="keywords" content={typedContent.pageKeywords} />
         <link rel="canonical" href={typedContent.pageUrl} />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Our Services | Zymptek - Expert Solutions for Global Sourcing and Supply Chain Optimization",
+      "url": "https://www.zymptek.com/services",
+      "description": "Discover Zymptek's comprehensive services designed to enhance global sourcing, streamline supply chains, and facilitate imports. From connecting with top Indian manufacturers to customized business solutions, we offer expert support for your international trade needs.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.zymptek.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.zymptek.com/services"
+          }
+        ]
+      },
+      "mainEntity": [
+        {
+          "@type": "Service",
+          "name": "Market Intelligence",
+          "description": "Make informed decisions with our comprehensive market insights and data-driven strategies.",
+          "serviceType": "Market Research and Analysis, Demand Forecasting",
+          "provider": {
+            "@type": "Organization",
+            "name": "Zymptek"
+          },
+          "serviceOutput": [
+            "Competitor analysis and benchmarking",
+            "Consumer behavior insights and segmentation",
+            "Market size and growth projections",
+            "Regulatory landscape overview and compliance guidance",
+            "SWOT analysis for market entry strategies",
+            "Identification of emerging trends and opportunities"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.zymptek.com/services/market-intelligence"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Trade Facilitation",
+          "description": "Simplify your global trade operations with our expert assistance and comprehensive support.",
+          "serviceType": "Customs Clearance and Compliance, Trade Finance Solutions",
+          "provider": {
+            "@type": "Organization",
+            "name": "Zymptek"
+          },
+          "serviceOutput": [
+            "Documentation preparation and verification",
+            "Tariff classification assistance",
+            "Customs valuation support",
+            "Compliance with local and international regulations",
+            "Management of special trade programs and free trade agreements",
+            "Real-time tracking of clearance status"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.zymptek.com/services/trade-facilitation"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Logistics Management",
+          "description": "Optimize your supply chain with our comprehensive logistics solutions and global network.",
+          "serviceType": "Global Freight Forwarding, Warehousing and Distribution",
+          "provider": {
+            "@type": "Organization",
+            "name": "Zymptek"
+          },
+          "serviceOutput": [
+            "Multi-modal shipping options (air, sea, rail, road)",
+            "Route optimization and carrier selection",
+            "Real-time shipment tracking and visibility",
+            "Customs brokerage integration",
+            "Specialized handling for oversized or hazardous cargo",
+            "Insurance and risk management services"
+          ],
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.zymptek.com/services/logistics-management"
+          }
+        }
+      ],
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Schedule a Consultation",
+        "target": "https://www.zymptek.com/contact"
+      }
+    }    
+  ) }}
+/>
+
       </Head>
       <Box>
         <Box color={textColor} py={20}>

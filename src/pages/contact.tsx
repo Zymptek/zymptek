@@ -38,8 +38,8 @@ const ContactPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const toast = useToast();
 
-  const accentColor = 'brand.300';
-  const textColor = useColorModeValue('brand.500', 'brand.200');
+  const accentColor = useColorModeValue('brand.300','brand.200');
+  const textColor = useColorModeValue('brand.500', 'brand.100');
   const labelColor = useColorModeValue('gray.700', 'gray.500');
   const inputBgColor = useColorModeValue('gray.50', 'whiteAlpha.100');
   const cardBgColor = 'white';
@@ -103,6 +103,80 @@ const ContactPage: React.FC = () => {
         <title>{contactPageContent.pageTitle}</title>
         <meta name="description" content={contactPageContent.pageDescription} />
         <meta name="keywords" content={contactPageContent.pageKeywords} />
+        <link rel="canonical" href={contactPageContent.pageUrl} />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Client Testimonials and Success Stories | Zymptek",
+      "description": "Discover how Zymptek has helped businesses around the world streamline their global trade operations, enter new markets, and achieve remarkable growth. Read our client testimonials and success stories.",
+      "url": "https://www.zymptek.com/testimonials",
+      "mainEntity": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "John Smith"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "Global Logistics Co."
+          },
+          "reviewBody": "Zymptek's market intelligence services have been instrumental in our expansion into new markets. Their insights are always spot-on and actionable.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Emily Johnson"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "TechInnovate Inc."
+          },
+          "reviewBody": "The custom clearance process used to be a nightmare for us. Zymptek's trade facilitation services have streamlined our operations and saved us both time and money.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael Chang"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "EcoProducts Ltd."
+          },
+          "reviewBody": "Zymptek's logistics management solutions have revolutionized our supply chain. We've seen a 30% increase in efficiency since partnering with them.",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }
+      ],
+      "about": {
+        "@type": "Organization",
+        "name": "Zymptek",
+        "sameAs": "https://www.zymptek.com"
+      },
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Start Your Journey",
+        "url": "https://www.zymptek.com/contact"
+      }
+    }
+    
+  ) }}
+/>
       </Head>
 
       <Box color={textColor} minH="100vh">
